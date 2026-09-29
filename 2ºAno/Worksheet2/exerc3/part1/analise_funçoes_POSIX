@@ -1,0 +1,8 @@
+Objetivo de getenv(): retorna uma variável do ambiente do OS
+Objetivo de getcwd(): retorna o diretório que se está a trabalhar neste momento
+
+Parâmetros necessários para getcwd():
+buf-O ponteiro para o array de caracteres (buffer) onde o caminho será armazenado
+size-O tamanho em bytes do buffer apontado por buf
+
+Se o buffer passado a getcwd() for menor do que o caminho do diretório atual a função falha e retorna NULL e a variável global errno é definida como erange (The size argument is less than the length of the absolute pathname of the working directory, including the terminating null byte. You need to allocate a bigger array and try again.)

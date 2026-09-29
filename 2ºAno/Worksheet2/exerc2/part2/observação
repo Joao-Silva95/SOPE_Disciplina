@@ -1,0 +1,1 @@
+Os valores impressos mudam conforme o utilizador com que o programa é executado, porque getuid() e getgid() devolvem os IDs reais do utilizador que lançou o processo, não algo fixo no programa.

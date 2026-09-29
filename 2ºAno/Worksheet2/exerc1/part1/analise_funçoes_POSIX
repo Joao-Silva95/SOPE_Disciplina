@@ -1,0 +1,2 @@
+Objetivo de getpid(): retorna o ID de um processo
+Objetivo de getppid(): retorna o ID de um processo pai

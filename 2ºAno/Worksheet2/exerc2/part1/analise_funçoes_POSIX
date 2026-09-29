@@ -1,0 +1,6 @@
+Objetivo de getuid(): retorna o ID do user verdadeiro 
+Objetivo de geteuid(): retorna o ID do user efetivo
+Objetivo de getgid(): retorna o ID do group verdadeiro
+Objetivo de getegid(): retorna o ID do group efetivo
+
+Diferença entre getuid e geteuid:A diferença entre o UID regular e o UID efetivo (EUID) é que apenas o EUID é verificado quando se realiza uma operação que exige acesso especial (como ler ou gravar um arquivo, ou fazer certas chamadas de sistema). O UID indica o usuário real que está executando a ação, mas (geralmente) não é levado em conta na verificação de permissões. Em programas comuns, ambos são iguais. Alguns programas alteram seu EUID para ampliar ou restringir as ações que têm permissão para realizar. Um número menor também altera seu UID para, efetivamente, "tornar-se" outro usuário.

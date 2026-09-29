@@ -1,0 +1,6 @@
+    PID TTY          TIME CMD
+    360 ?        00:00:00 systemd
+    361 ?        00:00:00 (sd-pam)
+    381 pts/1    00:00:00 bash
+    709 pts/2    00:00:00 bash
+    838 pts/2    00:00:00 ps

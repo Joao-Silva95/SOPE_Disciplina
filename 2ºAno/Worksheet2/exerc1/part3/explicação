@@ -1,0 +1,2 @@
+O PPID é o PID da shell pois ao fazer ./print_pid a shell faz fork() para criar o processo filho
+O kernel atribui o PID de forma ordenada, começando no um e aumentando sempre em um, até ao limite de processos (descobrir o max de processos que o pc aguenta: cat /proc/sys/kernel/pid_max, meu caso é 4194304), caso  chegue ao limite, volta ao início e verifica quais n estao a ser utilizados

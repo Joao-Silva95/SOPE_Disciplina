@@ -1,0 +1,62 @@
+1. terminal: man man
+manual do manual
+
+2.mkdir exerc1
+cria a diretoria exerc1
+
+3. cd exerc1
+muda a diretoria atual para exerc1
+
+4.mkdir teste1 teste2
+cria as diretorias teste1 e teste2
+
+5.echo aa>aa; echo bb>bb; echo cc>cc
+cria os ficheiros aa bb e cc e dentro deles esta escrito respetivamente aa bb cc
+
+6.cp -r /mnt/c/Users/joaos/Downloads/ProjetoSO/2ºAno/exerc1/teste1/* /mnt/c/Users/joaos/Downloads/ProjetoSO/2ºAno/exerc1/teste2
+copiou os ficheiros aa bb cc
+
+7.cp -r /mnt/c/Users/joaos/Downloads/ProjetoSO/2ºAno/exerc1/teste1/ /mnt/c/Users/joaos/Downloads/ProjetoSO/2ºAno/exerc1/teste2~
+copiou a diretoria teste1 e seus conteudos para teste2
+
+8.cd /mnt/c/Users/joaos/Downloads/ProjetoSO/2ºAno/exerc1/teste1
+muda a diretoria atual para teste1
+
+9.mkdir -p exerc1/teste1 cd exerc1/teste1 echo aa > aa chmod 600 aa ls -l aa
+-rw------- 1 joaos joaos 3 Sep 22 14:31 aa 
+
+10.echo ls -l > myls
+cria ficheiro myls com o conteúdo ls -lcfirst
+
+11../myls
+total 20
+-rw------- 1 joaos joaos   3 Sep 22 14:31 aa
+-rw-r--r-- 1 joaos joaos   3 Feb 11  2026 bb
+-rw-r--r-- 1 joaos joaos   3 Feb 11  2026 cc
+-rwxr--r-- 1 joaos joaos   6 Sep 22 14:32 myls
+-rw-r--r-- 1 joaos joaos 190 Feb 18  2026 processos
+
+12.ps
+PID TTY          TIME CMD
+    314 pts/0    00:00:00 bash
+    622 pts/0    00:00:00 ps~
+
+13.ps -u $USER > processos
+cria o ficheiro processos com a info dos processos do utilizador
+
+14.ls | wc -l
+conta o numero de ficheiros e diretorios na pasta atual usando pipes
+
+15.sleep 10; echo 'passaram 10 segundos'
+espera 10 segundos e escreve passaram 10 segundos
+
+16.sleep 130; echo 'passaram 130 segundos' &
+espera 130 segundos e escreve passaram 130 segundos em background
+
+17.ps -u $USER
+visualiza os processos
+
+18.ctrl+z
+mata processo
+
+19.

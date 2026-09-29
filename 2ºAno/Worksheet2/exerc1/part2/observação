@@ -1,0 +1,1 @@
+O PID altera sempre, pois cria sempre um novo processo mas o PPID é sempre o mesmo pois o pai é a própriia shell
