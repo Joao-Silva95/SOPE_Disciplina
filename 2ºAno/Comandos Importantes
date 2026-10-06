@@ -1,0 +1,17 @@
+"cd /mnt/c/Users/joaos/Downloads/ProjetoSO/" mudar de diretório
+Ex: "cd /mnt/c/Users/joaos/Downloads/ProjetoSO/2ºAno/Canvas/2-Processes/Exercicios_Sozinho/"
+
+"cd .." mudar para o diretório de cima
+Ex: de "/mnt/c/Users/joaos/Downloads/ProjetoSO/2ºAno/Canvas/2-Processes/Exercicios_Sozinho/" para "/mnt/c/Users/joaos/Downloads/ProjetoSO/2ºAno/Canvas/2-Processes/"Exercicios_Sozinho/" usando "cd .."
+
+"cd ~" mudar para o diretório do topo
+Ex: de "/mnt/c/Users/joaos/Downloads/ProjetoSO/2ºAno/Canvas/2-Processes/Exercicios_Sozinho/" para "~" usando "cd ~"
+
+"gcc NAME_OF_FILE.c -o NAME_OF_FILE" compilar NAME_OF_FILE
+Ex: "gcc suicide.c -o suicide"
+
+"./NAME_OF_FILE" executar NAME_OF_FILE
+Ex: " ./suicide"
+
+"clear" limpa o terminal
+Ex: idk mano já está bem explicado em cima
