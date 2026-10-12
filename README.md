@@ -13,6 +13,7 @@ Organização no 2ºAno:
             Exemplos
             Exercícios_Sozinho
             PDFs
+        parse
     Worksheet1
         (Da maneira como a ficha pedia)
     Worksheet2
