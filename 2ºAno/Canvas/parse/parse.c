@@ -8,6 +8,8 @@
 
 #include "header.h"
 
+CMD *command_list;
+
 void print_command_list(){
     CMD *temp;
     int i;

@@ -24,8 +24,6 @@ typedef struct command {
 } CMD;
 
 
-CMD *command_list;
-
 
 CMD *insert_command();
 void free_command_list();
