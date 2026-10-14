@@ -5,78 +5,77 @@
 
 /* gcc 6-sig_talk.c -o 6-sig_talk  */
 
+#include <signal.h>
 #include <stdio.h>
 #include <stdlib.h>
-#include <signal.h>
-#include <unistd.h>
 #include <sys/wait.h>
+#include <unistd.h>
 
 /* routines child will call upon sigtrap */
-void sighup();
-void sigint();
-void sigquit();
+void	sighup(void);
+void	sigint(void);
+void	sigquit(void);
 
-int main()
+int	main(void)
 {
-    int pid;
-    
-    // get child process
-    
-    if ((pid = fork()) < 0) {
-        perror("fork");
-        exit(1);
-    }
-    
-    if (pid == 0)
-        // Child
-    {
-        // set function calls
-        signal(SIGHUP,sighup);
-        signal(SIGINT,sigint);
-        signal(SIGQUIT, sigquit);
-        for(;;); // loop for ever
-    }
-    else
-        // Parent
-    {
-        // pid hold id of child
-        // pause for 3 secs
-        sleep(3);
-        printf("\nPARENT: sending SIGHUP\n\n");
-        // send signal
-        kill(pid,SIGHUP);
-        // pause for 3 secs
-        sleep(3);
-        printf("\nPARENT: sending SIGINT\n\n");
-        // send signal
-        kill(pid,SIGINT);
-        // pause for 3 secs
-        sleep(3);
-        printf("\nPARENT: sending SIGQUIT\n\n");
-        // send signal
-        kill(pid,SIGQUIT);
-        // pause for 3 secs
-        sleep(3);
-        wait(NULL);
-    }
+	int	pid;
+
+	// get child process
+	if ((pid = fork()) < 0)
+	{
+		perror("fork");
+		exit(1);
+	}
+	if (pid == 0)
+	// Child
+	{
+		// set function calls
+		signal(SIGHUP, sighup);
+		signal(SIGINT, sigint);
+		signal(SIGQUIT, sigquit);
+		for (;;)
+			; // loop for ever
+	}
+	else
+	// Parent
+	{
+		// pid hold id of child
+		// pause for 3 secs
+		sleep(3);
+		printf("\nPARENT: sending SIGHUP\n\n");
+		// send signal
+		kill(pid, SIGHUP);
+		// pause for 3 secs
+		sleep(3);
+		printf("\nPARENT: sending SIGINT\n\n");
+		// send signal
+		kill(pid, SIGINT);
+		// pause for 3 secs
+		sleep(3);
+		printf("\nPARENT: sending SIGQUIT\n\n");
+		// send signal
+		kill(pid, SIGQUIT);
+		// pause for 3 secs
+		sleep(3);
+		wait(NULL);
+	}
 }
 
-void sighup()
-
-{
-    printf("CHILD: I have received a SIGHUP\n");
-}
-
-void sigint()
+void	sighup(void)
 
 {
-    printf("CHILD: I have received a SIGINT\n");
+	printf("CHILD: I have received a SIGHUP\n");
 }
 
-void sigquit()
+void	sigint(void)
 
-{ 
-    printf("My DADDY told me to DIE NOW!!!\n\n\n");
-    exit(0);
+{
+	printf("CHILD: I have received a SIGINT\n");
 }
 
+void	sigquit(void)
+
+{
+	printf("My DADDY told me to DIE NOW!!!\n\n\n");
+	exit(0);
+}

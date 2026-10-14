@@ -1,10 +1,11 @@
+#include <signal.h>
 #include <stdio.h>
 #include <sys/types.h>
 #include <unistd.h>
-#include <signal.h>
 
-int main(){
-    kill(getpid(),SIGKILL);
+int	main(void)
+{
+	kill(getpid(), SIGKILL);
 }
 
-//mata-se
+// mata-se

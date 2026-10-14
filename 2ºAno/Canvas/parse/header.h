@@ -6,26 +6,25 @@
  *
  */
 
-#include <stdio.h>
-#include <string.h>
-#include <stdlib.h>
-#include <readline/readline.h>
 #include <readline/history.h>
+#include <readline/readline.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
 
 #define MAXARGS 10
 
-typedef struct command {
-    char *name;
-    char *argv[MAXARGS];
-    char *infile;
-    char *outfile;
-    char *errfile;
-    struct command *next;
-} CMD;
+typedef struct command
+{
+	char			*name;
+	char			*argv[MAXARGS];
+	char			*infile;
+	char			*outfile;
+	char			*errfile;
+	struct command	*next;
+}					CMD;
 
-
-
-CMD *insert_command();
-void free_command_list();
-void print_command_list();
-void parse_line(char *);
+CMD					*insert_command(void);
+void				free_command_list(void);
+void				print_command_list(void);
+void				parse_line(char *);

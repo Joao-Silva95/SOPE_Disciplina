@@ -1,10 +1,11 @@
+#include <signal.h>
 #include <stdio.h>
 #include <sys/types.h>
 #include <unistd.h>
-#include <signal.h>
 
-int main(){
-    kill(getppid(),SIGKILL);
+int	main(void)
+{
+	kill(getppid(), SIGKILL);
 }
 
-//MATA SHELL
+// MATA SHELL
