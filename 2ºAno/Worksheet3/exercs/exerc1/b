@@ -1,0 +1,44 @@
+Normalmente o pai escreve primeiro, mas não há nenhuma garantia. Depois do fork() os dois processos executam concorrentemente e a ordem depende do escalonador do SO. Para garantir uma ordem é preciso sincronizar, por exemplo com wait()/waipid().
+
+./fork
+Pai: PID do filho = 928, PID do pai = 927
+Filho: PID do filho = 928, PID do pai = 927
+./fork
+Pai: PID do filho = 939, PID do pai = 938
+Filho: PID do filho = 939, PID do pai = 938
+./fork
+Pai: PID do filho = 950, PID do pai = 949
+Filho: PID do filho = 950, PID do pai = 949
+./fork
+Pai: PID do filho = 961, PID do pai = 960
+Filho: PID do filho = 961, PID do pai = 960
+./fork
+Pai: PID do filho = 972, PID do pai = 971
+Filho: PID do filho = 972, PID do pai = 971
+./fork
+Pai: PID do filho = 983, PID do pai = 982
+Filho: PID do filho = 983, PID do pai = 982
+./fork
+Pai: PID do filho = 994, PID do pai = 993
+Filho: PID do filho = 994, PID do pai = 993
+./fork
+Pai: PID do filho = 1005, PID do pai = 1004
+Filho: PID do filho = 1005, PID do pai = 1004
+./fork
+Pai: PID do filho = 1016, PID do pai = 1015
+Filho: PID do filho = 1016, PID do pai = 1015
+./fork
+Pai: PID do filho = 1027, PID do pai = 1026
+Filho: PID do filho = 1027, PID do pai = 1026
+./fork
+Pai: PID do filho = 1038, PID do pai = 1037
+Filho: PID do filho = 1038, PID do pai = 1037
+./fork
+Pai: PID do filho = 1049, PID do pai = 1048
+Filho: PID do filho = 1049, PID do pai = 1048
+./fork
+Pai: PID do filho = 1060, PID do pai = 1059
+Filho: PID do filho = 1060, PID do pai = 1059
+./fork
+Pai: PID do filho = 1071, PID do pai = 1070
+Filho: PID do filho = 1071, PID do pai = 1070

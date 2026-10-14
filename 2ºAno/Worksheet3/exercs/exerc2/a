@@ -1,0 +1,3 @@
+wait() faz o pai esperar até que um dos seus filhos termine.
+
+waitpid() faz o pai esperar até que um filho específico termine, especifícado pelo PID.

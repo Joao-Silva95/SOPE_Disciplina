@@ -1,0 +1,3 @@
+fork() ceia um novo processo, o filho, que é uma cópia do processo que o chamou, o pai.
+
+exit() termina o processo que o chama.

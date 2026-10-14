@@ -1,4 +1,3 @@
-
 #include <stdio.h>
 #include <stdlib.h>
 #include <sys/wait.h>
@@ -8,8 +7,8 @@
 int	main(int argc, char *argv[])
 {
 	int	pid;
-		int x;
-		int result;
+	int	x;
+	int	result;
 
 	if ((pid = fork()) == -1)
 	{
