@@ -28,17 +28,14 @@ int	main(void)
 		execv("/bin/ls",
 				arg_list); // Absolute path to the binary file; variable
 							// parameters in a NULL terminated string array
-		execvp(arg_list[0],
-				arg_list);             
-					// Using $PATH to find to the binary file, variable
-										// parameters in a NULL terminated string array
+		execvp(arg_list[0], arg_list);
+		// Using $PATH to find to the binary file, variable
+		// parameters in a NULL terminated string array
 		execlp("ls", "-l", "/", NULL); // Using $PATH to the binary file, inline
 										// list parameters, NULL terminated
-		execve("/bin/ls",
-				arg_list,
-				env_list);
-					// Absolute path to the binary file; variable parameters
-							// and environment NULL terminated string array
+		execve("/bin/ls", arg_list, env_list);
+		// Absolute path to the binary file; variable parameters
+		// and environment NULL terminated string array
 		// The execvp function returns only if an error occurs.
 		printf("Child Says:\tan error occurred in execvp\n");
 		exit(1);

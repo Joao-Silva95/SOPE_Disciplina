@@ -39,13 +39,13 @@ long long	soma_paralela(void)
 	int			fatias;
 	pid_t		pids[NUM_PROCESSOS];
 	int			inicio;
-			int fim;
+	int			fim;
 	long long	soma_parcial;
-			char nome_ficheiro[32];
+	char		nome_ficheiro[32];
 	int			fd;
 	long long	soma_total;
-		int status;
-		char nome_ficheiro[32];
+	int			status;
+	char		nome_ficheiro[32];
 	int			fd;
 	long long	parcial;
 

@@ -18,7 +18,7 @@ static int	collect_log_files(const char *dir, char files[][MAX_PATH],
 	DIR				*dp;
 	struct dirent	*entry;
 	int				count;
-		const char *ext = strrchr(entry->d_name, '.');
+	const char		*ext = strrchr(entry->d_name, '.');
 
 	count = 0;
 	dp = opendir(dir);
@@ -44,7 +44,7 @@ static int	collect_log_files(const char *dir, char files[][MAX_PATH],
 static void	child_work(char files[][MAX_PATH], int start, int end,
 		AnalysisMode mode)
 {
-		WorkerResult result;
+	WorkerResult	result;
 
 	for (int i = start; i < end; i++)
 	{
@@ -70,7 +70,7 @@ int	main(int argc, char *argv[])
 	int			slice;
 	int			end;
 	pid_t		pid;
-		int status;
+	int			status;
 	pid_t		ended;
 
 	parse_args(argc, argv, &cfg);

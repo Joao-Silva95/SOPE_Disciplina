@@ -115,7 +115,7 @@ static void	parse_apache(const char *line, WorkerResult *r)
 static void	parse_json(const char *line, WorkerResult *r)
 {
 	char	*p;
-		char ip[MAX_IP_LEN] = {0};
+	char	ip[MAX_IP_LEN] = {0};
 	int		i;
 
 	count_level(line, r);
@@ -141,7 +141,7 @@ static void	parse_syslog(const char *line, WorkerResult *r)
 {
 	int		pri;
 	char	*p;
-		char ip[MAX_IP_LEN] = {0};
+	char	ip[MAX_IP_LEN] = {0};
 	char	*sp;
 
 	/* Prioridade: os 3 bits menos significativos são severidade */
@@ -173,7 +173,7 @@ static void	parse_syslog(const char *line, WorkerResult *r)
 static void	parse_nginx_err(const char *line, WorkerResult *r)
 {
 	char	*p;
-		char ip[MAX_IP_LEN] = {0};
+	char	ip[MAX_IP_LEN] = {0};
 
 	count_level(line, r);
 	p = strstr(line, "client: ");
@@ -316,15 +316,18 @@ void	write_result_file(const WorkerResult *r)
 void	aggregate_results(int num_processes, pid_t *pids, AnalysisMode mode)
 {
 	long		total_lines = 0, total_errors = 0, total_warnings = 0,
-				total_critical = 0, total_4xx = 0, total_5xx;
+				total_critical = 0, total_4xx;
 	const char	*mode_names[] = {"SECURITY", "PERFORMANCE", "TRAFFIC", "FULL"};
-		char fname[64];
+	char		fname[64];
 	int			fd;
-		char line[MAX_LINE];
-		ssize_t n;
-	long		ll = 0, er = 0, wa = 0, cr = 0, f4 = 0, f5;
-			char *p;
+	char		line[MAX_LINE];
+	ssize_t		n;
+	long		ll = 0, er = 0, wa = 0, cr = 0, f4;
+	char		*p;
 
+	total_lines = 0, total_errors = 0, total_warnings = 0, total_critical = 0,
+		total_4xx = 0, total_5xx;
+	ll = 0, er = 0, wa = 0, cr = 0, f4 = 0, f5;
 	total_lines = 0, total_errors = 0, total_warnings = 0, total_critical = 0,
 		total_4xx = 0, total_5xx = 0;
 	printf("\n=== RELATORIO AGREGADO [%s] ===\n\n", mode_names[mode]);

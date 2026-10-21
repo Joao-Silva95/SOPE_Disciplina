@@ -83,7 +83,7 @@ struct command	*insert_command(void)
 		temp->next = new;
 	}
 	return (new); // retornamos o nodo vazio, mas inicializado, para ser
-				// preenchido pela funcão parse_line()
+					// preenchido pela funcão parse_line()
 }
 
 void	parse_line(char *line)

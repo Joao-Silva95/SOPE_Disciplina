@@ -22,8 +22,8 @@
 int	main(int argc, char *argv[])
 {
 	int	pid;
-		int x;
-		int result;
+	int	x;
+	int	result;
 
 	if ((pid = fork()) == -1)
 	{
