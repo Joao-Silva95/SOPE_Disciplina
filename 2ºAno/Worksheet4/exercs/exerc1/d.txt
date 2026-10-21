@@ -1,0 +1,1 @@
+O PID e o PPID mantêm-se iguais antes e depois da chamada ao sistema exec(). Isto acontece porque o exec() não cria um novo processo: substitui apenas a imagem (código, dados, heap e stack) do processo atual por a do novo programa, mantendo a mesma entrada na tabela de processos. Quem cria um novo processo (com novo PID) é o fork(), e o PPID do filho corresponde ao PID do pai.

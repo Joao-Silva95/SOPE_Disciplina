@@ -1,0 +1,10 @@
+Porque razão essa mensagem nunca aparece no terminal?
+
+Quando o execlp() é bem sucedido, a imagem do processo é substituída pela do programa ls: o código, os dados e a stack do programa original deixam de existir no processo filho. Como o printf("Passei o execlp!") fazia parte do código antigo, já não existe e, por isso, a chamada nunca retorna. O processo filho passa a executar o main() do ls, e termina quando o ls terminar.
+
+O terminal mostra apenas a listagem do ls (vinda do filho) e “Child Complete” (vindo do pai).
+
+
+O que seria necessário acontecer para a mensagem aparecer?
+
+A mensagem só aparece se o execlp() falhar, porque nesse caso a imagem do processo não é substituída e a função retorna -1.

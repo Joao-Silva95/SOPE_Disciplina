@@ -316,15 +316,18 @@ void	write_result_file(const WorkerResult *r)
 void	aggregate_results(int num_processes, pid_t *pids, AnalysisMode mode)
 {
 	long		total_lines = 0, total_errors = 0, total_warnings = 0,
-				total_critical = 0, total_4xx;
+				total_critical;
 	const char	*mode_names[] = {"SECURITY", "PERFORMANCE", "TRAFFIC", "FULL"};
 	char		fname[64];
 	int			fd;
 	char		line[MAX_LINE];
 	ssize_t		n;
-	long		ll = 0, er = 0, wa = 0, cr = 0, f4;
+	long		ll = 0, er = 0, wa = 0, cr;
 	char		*p;
 
+	total_lines = 0, total_errors = 0, total_warnings = 0, total_critical = 0,
+		total_4xx;
+	ll = 0, er = 0, wa = 0, cr = 0, f4;
 	total_lines = 0, total_errors = 0, total_warnings = 0, total_critical = 0,
 		total_4xx = 0, total_5xx;
 	ll = 0, er = 0, wa = 0, cr = 0, f4 = 0, f5;

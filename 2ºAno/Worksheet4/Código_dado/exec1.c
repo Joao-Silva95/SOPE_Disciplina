@@ -17,6 +17,7 @@ int	main(void)
 	else if (pid == 0)
 	{ /* child process */
 		execl("/bin/ls", "ls", NULL);
+		printf("Passei o execlp!");
 	}
 	else
 	{ /* parent process */

@@ -1,0 +1,20 @@
+Qual a função da família de chamadas ao sistema execl e execv? 
+
+As chamadas da família exec substituem a imagem do processo atual por um novo programa.
+O código, os dados, a heap e a stack do processo são substituídos pelos do novo executável, e a execução recomeça no main() desse programa.
+
+O que se mantém é o PID (e o PPID), os descritores de ficheiros abertos (salvo os marcados com close-on-exec), o diretório de trabalho e outros atributos do processo. Ou seja, não é criado nenhum processo novo: é o mesmo processo a executar outro programa. Por isso o exec é normalmente combinado com fork(): o filho faz exec e o pai continua o seu trabalho.
+
+Quais as diferenças entre as chamadas execlp() e execvp()?
+
+O p significa que a função usa a variável de ambiente PATH para procurar o executável. Se o nome do ficheiro não contiver /, é procurado em cada diretório do PATH. Assim, pode escrever-se "ls" em vez de "/bin/ls".
+
+A diferença entre as duas é, tal como acima, apenas a forma de passar os argumentos:
+
+execlp(file, arg0, arg1, ..., NULL): argumentos em lista.
+execvp(file, argv): argumentos em vetor (char *argv[] terminado em NULL).
+c
+execlp("ls", "ls", "-al", "/", NULL);
+
+char *argv[] = {"ls", "-al", "/", NULL};
+execvp("ls", argv);

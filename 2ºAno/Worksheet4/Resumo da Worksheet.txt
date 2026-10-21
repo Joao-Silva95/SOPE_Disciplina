@@ -1,0 +1,6 @@
+exec
+
+l: argumentos em lista
+v: argumentos em vetor
+p: pesquisa o executável no PATH
+e: permite passar o ambiente (envp) explicitamente (ex.: execle, execve)
